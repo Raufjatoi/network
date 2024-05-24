@@ -1,0 +1,185 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    margin-top: 60px;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.navbar a:hover {
+    color: #1da1f2;
+}
+
+/* Feed Styling */
+.feed {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.feed-container {
+    width: 600px;
+}
+
+.post {
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    overflow: hidden; /* Ensures that the container respects the size of its children */
+    display: flex; /* Use flexbox to control layout */
+    flex-direction: column; /* Arrange items vertically */
+}
+
+.post .username {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.post .content {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.post .date {
+    color: #999;
+    font-size: 0.9em;
+    margin-top: auto; /* Pushes the date to the bottom */
+}
+
+/* Profile Styling */
+.profile {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-header img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.profile-header .profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header .profile-info .name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.profile-header .profile-info .bio {
+    color: #777;
+}
+
+/* Buttons */
+.button {
+    background-color: #1da1f2;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1a91da;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin-left: 20px;
+}
+
+.sidebar .section {
+    margin-bottom: 20px;
+}
+
+.sidebar .section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.sidebar .section a {
+    color: #1da1f2;
+    text-decoration: none;
+}
+
+.sidebar .section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e6e6e6;
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    color: #1da1f2;
+}
