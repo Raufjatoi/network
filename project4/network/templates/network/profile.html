@@ -10,29 +10,30 @@
                 <h3 class="col-4">Following 🤡: {{ following.count }}</h3>
 
                 {% if user.is_authenticated %}
-                    {% if user != user_profile %}
-                        {% if isFollowing %}
-                            <form action="{% url 'unfollow' %}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="userfollow" value="{{ user_profile }}" />
-                                <input type="submit" class="btn btn-danger" value="Unfollow" />
-                            </form>
-                        {% else %}
-                            <form action="{% url 'follow' %}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="userfollow" value="{{ user_profile }}" />
-                                <input type="submit" class="btn btn-success" value="Follow" />
-                            </form>
-                        {% endif %}
+                {% if user != user_profile %}
+                    {% if is_following %}
+                        <form action="{% url 'unfollow' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="userfollow" value="{{ user_profile.username }}" />
+                            <input type="submit" class="btn btn-danger" value="Unfollow" />
+                        </form>
+                    {% else %}
+                        <form action="{% url 'follow' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="userfollow" value="{{ user_profile.username }}" />
+                            <input type="submit" class="btn btn-success" value="Follow" />
+                        </form>
                     {% endif %}
                 {% endif %}
+            {% endif %}
+            
             </div>
         </div>
     </div>
     <div>
         {% for post in posts_of_the_page %}
             <div class="row post mx-5">
-                <h5 class="username">@{{ post.user }}</h5>
+                <h5 class="username"><a href="{% url 'profile' user_id=post.user.id %}"> @{{ post.user }} </a></h5>
                 <p class="content">{{ post.content }}</p>
                 <p class="date">{{ post.date }}</p>
             </div>
