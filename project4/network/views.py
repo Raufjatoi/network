@@ -18,20 +18,28 @@ def edit(request, post_id):
         edit_post.save()
         return JsonResponse({"message": "Changes successful", "data": data["content"]})
 
-def like_post(request, post_id):
-    if request.method == "POST":
+def remove_like(request, post_id):
+    try:
         post = Post.objects.get(pk=post_id)
         user = request.user
-        if user in post.likes.all():
-            post.likes.remove(user)
-            message = "Removed like"
+        like = Like.objects.filter(user=user, post=post).first()
+        if like:
+            like.delete()
+            return JsonResponse({"message": "remove like successful"})
         else:
-            post.likes.add(user)
-            message = "Added like"
-        post.save()
-        return JsonResponse({"message": message})
-    return JsonResponse({"error": "Method not allowed"}, status=405)
+            return JsonResponse({"message": "like not found"}, status=404)
+    except Post.DoesNotExist:
+        return JsonResponse({"message": "Post not found"}, status=404)
+    except Exception as e:
+        return JsonResponse({"message": str(e)}, status=500)
+   
 
+def add_like (request , post_id):
+    post = Post.objects.get(pk=post_id)
+    user = User.objects.get(pk=request.user.id)
+    newLike = Like(user=user, post=post)
+    newLike.save()
+    return JsonResponse({"message": "Like added" })
 
 def index(request):
     allPosts = Post.objects.all().order_by("id").reverse()
