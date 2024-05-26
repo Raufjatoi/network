@@ -2,7 +2,8 @@
  proj 4 of cs50web    
 
  # vid demo
-[![Watch the video](https://imgur.com/jQQUa1o.png)](https://youtu.be/flpNivYoFO4?si=MOh_aKcf3TwLhMBx)        
+[![Watch the video]()](https://youtu.be/flpNivYoFO4?si=MOh_aKcf3TwLhMBx)
+      
        
   
 
