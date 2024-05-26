@@ -2,7 +2,7 @@
  proj 4 of cs50web    
 
  # vid demo
-[![Watch the video](https://img.youtube.com/vi/flpNivYoFO4/maxresdefault.jpg)](https://youtu.be/flpNivYoFO4?si=MOh_aKcf3TwLhMBx)       
+[![Watch the video](https://imgur.com/jQQUa1o.png)](https://youtu.be/flpNivYoFO4?si=MOh_aKcf3TwLhMBx)        
        
   
 
